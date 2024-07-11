@@ -70,17 +70,3 @@ curl -X POST http://localhost:5000/predict -H 'Content-Type: application/json' -
   "prediction": "Positive"
 }
 ```
-
-### Authors
-dreahim
-
-### License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-
-### Acknowledgments
-Mention any acknowledgments or resources used that inspired you in this project.
-
-```sql
-Feel free to paste this content into your README.md file and customize it as per your specific project details and implementation.
-```
