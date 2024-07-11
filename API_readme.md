@@ -9,7 +9,13 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - Docker installed on your local machine. You can download Docker [here](https://www.docker.com/products/docker-desktop).
-- download model folder from [here](), uncompress it and put it in the your folder
+- download model folder from [here](https://drive.google.com/file/d/1sl53UxSvDA4tN-XA-r939IXcKRD71Tcx/view?usp=sharing), uncompress it and put it in the your folder
+- Your folder should be like this:
+  -  **arabic-sentiment-analysis-API** (the main directory)
+  - --> app.py
+  - --> dockerfile
+  - --> requirements.txt
+  - --> arabert-model-v5-with-mixed
 
 <!-- ### Installing
 
@@ -32,6 +38,7 @@ cd <your-folder-path>
 docker build --tag sentiment_analysis_ar .
 ```
 
+wait unti it finishes, It may take many minutes
 
 ### Run the Docker Container
 Run the Docker container,
@@ -39,13 +46,13 @@ Run the Docker container,
 <!-- ###### *mapping your machine's port 5000 to the container's port 5000:* -->
 
 
-```bash
-docker run -p sentiment_analysis_ar
-```
 <!-- ```bash
-docker run -p 5000:5000 sentiment_analysis_ar
+docker run -p sentiment_analysis_ar
 ``` -->
-<!-- The API should now be running and accessible locally at http://localhost:5000. -->
+```bash
+docker run -p 5000:5000 sentiment_analysis_ar
+```
+The API should now be running and accessible locally at http://localhost:5000.
 
 
 
@@ -58,7 +65,6 @@ docker run -p 5000:5000 sentiment_analysis_ar
 - Input: JSON object with a text field containing the Arabic text for sentiment analysis.
 - Output: JSON object with a prediction field containing the predicted sentiment (Positive, Neutral, or Negative).
 
-### **Go to command line:**
 
 ***Write your sentence in a command like this:***
 ```bash
