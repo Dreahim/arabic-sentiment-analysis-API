@@ -1,4 +1,4 @@
-# cd D:\ML\Upshifters\Appl_task\REST_API
+# cd D:\ML\Upshifters\Appl_task\arabic-sentiment-analysis-API
 
 from flask import Flask, request, jsonify, current_app, g as app_ctx
 from transformers import pipeline
@@ -7,8 +7,8 @@ import time
 import re
 
 # initialize pipline
-output_dir = "./arabert-model-v5-with-mixed"
-class_map = {3:"Mixed", 2:"Positive", 1:"Neutral", 0:"Negative"}
+output_dir = "./arabert-model-v4"
+class_map = {2:"Positive", 1:"Neutral", 0:"Negative"}
 pipe = pipeline("sentiment-analysis", model=output_dir, return_all_scores=True)
 
 # preprocess input text
@@ -48,7 +48,8 @@ def get_clean_text(text):
 
 app = Flask(__name__)
 
-# curl -i -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d "{\"text\": \"المنتج حلو!\"}"
+
+# curl -i -X POST http://127.0.0.1:4000/predict -H "Content-Type: application/json" -d "{\"text\": \"المنتج حلو!\"}"
 @app.route('/predict', methods = ['POST'])
 def predict():
     if request.method == 'POST':
@@ -78,4 +79,4 @@ def logging_after(response):
 
 
 if __name__ =="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

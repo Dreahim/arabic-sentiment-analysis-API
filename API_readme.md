@@ -50,9 +50,21 @@ Run the Docker container,
 docker run -p sentiment_analysis_ar
 ``` -->
 ```bash
-docker run -p 5000:5000 sentiment_analysis_ar
+docker run -p 4000:5000 sentiment_analysis_ar
 ```
-The API should now be running and accessible locally at http://localhost:5000.
+
+
+<!-- ```bash
+docker run -v D:\ML\Upshifters\Appl_task\arabic-sentiment-analysis-API:/sentiment -p 4000:5000 sentiment_analysis_ar
+``` -->
+
+
+The API should now be running and accessible locally at http://localhost:4000.
+
+You can use tish command:
+``` bash
+curl -i -X POST http://127.0.0.1:4000/predict -H "Content-Type: application/json" -d "{\"text\": \"الخدمة مو حلوة\"}"
+```
 
 
 
